@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(void) {
+  float pi=3.1416; // apunta a un entero 
+   float *ptrpi=&pi;
+
+  printf("Tu float es: %f\n",pi);
+  printf("El Ptrpi es: %f\n",*ptrpi);
+  printf("La direccion del puntero es:%p\n",&ptrpi);
+  printf("La dirrecion variable pi: %p",&pi);
+  return 0;
+}

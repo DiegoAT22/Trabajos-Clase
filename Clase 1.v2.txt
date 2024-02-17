@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void llenaArreglos(int arreglo[], int tamano){ // Este codigo tiene la funcion de dar numeros aleatorios a la cantidad del arreglo.
+   printf("Ahora estaremos llenando tu arreglo\n");
+for(int i=0; i<tamano;i++){
+  arreglo[i]=rand()%100;
+}
+}
+void ImprimidorArreglos(int arreglo[], int tamano){ // Esta funcion tiene el proposito de dar el arreglo con los numeros de forma aleatorioa.
+printf("Arreglo original:\n");
+  for( int i=0; i<tamano;i++){
+printf("%d\n",arreglo[i]);
+  }
+}
+void AcomodadorBurbujas(int arreglo[],int tamano){ // Esta funcion hace que el arreglo ordenado pueda funcionar, ya que los for hace que vaya pasando de casilla y asi poder rectificar que numero es mas grande y asi acomodarlo.
+for(int i=0; i<tamano-1; i++){
+  for(int j=0;j<tamano-i-1; j++){
+    if(arreglo[j] > arreglo[j+1]){
+      int temp=arreglo[j];
+      arreglo[j]=arreglo[j+1];
+      arreglo[j+1]=temp;
+    }
+  }
+}
+  
+}
+int main(void) {
+  int tamano;
+  printf("Ingrese el tamaño del arreglo:");// Este le da el tamaño al arreglo, donde el usuario decide de que tamaño sera.
+  scanf("%d",&tamano);
+  int arreglo[tamano];
+  clock_t inicio,fin;// Esta es una funcion para poder saber cuanto tiempo tarda en crearse los arreglos.
+
+  llenaArreglos(arreglo,tamano);
+  ImprimidorArreglos(arreglo,tamano);
+  inicio=clock();
+AcomodadorBurbujas(arreglo,tamano);
+  fin=clock();
+  double tiempo_arreglo=((double)(fin-inicio))/CLOCKS_PER_SEC;// Esto es una resta para poder determinar cuanto tiempo tardo en crearse un arreglo
+  printf("\nArreglo Acomodado:\n");// Aqui es el codigo donde el arreglo originarl se acomoda gracias al algoritmo de burbuja
+  for(int i=0;i<tamano;i++){
+printf("%d\n",arreglo[i]);
+  }
+printf("\n");
+  printf("Tiempo en segundos:%f\n",tiempo_arreglo);
+  
+  return 0;
+}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(void) {
+int numero=42;
+  int *ptrNumero=&numero;
+  printf("Contenido de la variable Numero: %d\n",numero);
+  printf("Dirrecion de la variable Numero: %p\n",&numero);
+  printf("Contenido del puntero ptrNumero: %p\n",ptrNumero);
+  printf("Valor al que apunta ptrNumero: %d\n",*ptrNumero);
+  printf("Dirrecion del puntero ptrNumero: %p\n", &ptrNumero);
+  return 0;
+}

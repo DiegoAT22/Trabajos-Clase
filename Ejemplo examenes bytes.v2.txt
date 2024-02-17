@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+struct Motor {
+    int numeroCilindros;
+    float capacidadLitros;
+};
+
+struct Llanta {
+    int diametroPulgadas;
+    char tipo[20];
+};
+
+struct Puerta {
+    char tipoApertura[20];
+    int electrica;
+};
+
+struct Auto {
+    char marca[20];
+    char modelo[20];
+    struct Motor motor;
+    struct Llanta llantaDelantera;
+    struct Llanta llantaTrasera;
+    struct Puerta puertaIzquierda;
+    struct Puerta puertaDerecha;
+};
+
+int main() {
+    size_t size_de_puerta = sizeof(struct Puerta);
+    size_t size_de_2_puertas = size_de_puerta * 2;
+
+    printf("El tamaño en bytes de 2 estructuras tipo Puerta es: %d\n", size_de_2_puertas);
+
+  printf("El tamaño en bytes de la puerta: %d\n",sizeof(struct Puerta));
+
+  printf("El tamaño en bytes de la estructua automatica es: %d\n",sizeof(struct Auto));
+//
+  
+  size_t size_of_auto = sizeof(struct Auto);
+
+  size_t nibbles_count = size_of_auto * 2;
+
+  printf("El tamaño en bytes de la estructura Auto es: %zu\n", size_of_auto);
+  printf("El tamaño en bytes de la estructura Auto es: %zu\n",sizeof(struct Auto));
+  
+  printf("La cantidad de nibbles que tiene la estructura Auto es: %zu\n", nibbles_count);
+
+int tamaño_bits=size_of_auto*8;
+  
+  printf("La cantidad de bits en la estrucuta Auto es:%d",tamaño_bits);
+    return 0;
+}

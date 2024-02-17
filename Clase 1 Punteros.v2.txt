@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(void) {
+  // Definir variabe entero
+ int numero=42;
+  //Definir un puntero a entero y asignarle la direccion de la variable.
+  int *puntero= &numero;
+  *puntero=99;
+  //Imprimir el valor de la variable a traves del puntero
+  printf("Valo de la variable:%d\n",*puntero);
+  printf("Direccion del puntero:%p\n",&puntero);
+printf("Nuevo valor de la variable:&d\n");
+  
+  return 0;
+}

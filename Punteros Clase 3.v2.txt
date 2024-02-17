@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(void) { 
+  int arreglo[5]={0,2,4,6,8};
+  int *puntero=arreglo;
+  for(int i =0; i<5; i++){
+  printf("Elemento %d: %d\n,esta es la dirrecion %p\n",i,*puntero,&*puntero);
+puntero++;
+    }
+  printf("La variable puntero contiene la dirrecion %p, que apunta al valor %d y la dirrecion del puntero es %p",&puntero,*arreglo,&*puntero);
+  return 0;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(void) {
+  int a=10,b=30;
+  int *punteroA=&a;
+  int *punteroB=&b;
+  int punteroT=*punteroA+*punteroB;
+  printf("El valor del primer puntero:%d\n",*punteroA);
+  printf("El valor del segundo puntero:%d\n",*punteroB);
+  printf("El valor de los 2 sumados:%d\n",punteroT);
+  *punteroA=30;
+  printf("Valor A=%d",a);
+  return 0;
+}
